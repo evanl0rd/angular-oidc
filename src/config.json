@@ -1,0 +1,7 @@
+{
+    "production": false,
+    "oidcIssuer": "https://accounts.google.com",
+    "oidcAuthorizationEndpoint": "https://accounts.google.com/o/oauth2/v2/auth",
+    "oidcClientId": "1089224859704-qbgb02apkvqcfvl4uir1laen0gao54il.apps.googleusercontent.com",
+    "apiUrl": "http://localhost:3000"
+}

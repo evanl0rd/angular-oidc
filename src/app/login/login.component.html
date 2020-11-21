@@ -1,0 +1,38 @@
+<div class="container">
+  <div class="row">
+    <div class="col-md-6 col-md-offset-3">
+      <form *ngIf="!email" name="loginForm" (ngSubmit)="login()" novalidate>
+        <div class="form-group">
+          <button id="oidcLogin" [disabled]="loading" class="btn btn-primary">Login with Google</button>
+        </div>
+      </form>
+      <form *ngIf="email" name="logoutForm" (ngSubmit)="logout()" novalidate>
+        <div class="form-group">
+          Logged in as {{email}}<br>
+          Access token:<br>{{access_token}}<br>
+          ID token:<br>{{id_token}}<br>
+          <button id="oidcLogout" [disabled]="loading" class="btn btn-primary">Logout</button>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-md-12">
+      <h2>Login History</h2>
+      <table class="table table-bordered">
+        <thead>
+          <tr>
+            <th scope="col">Login Time</th>
+            <th scope="col">Email</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let login of logins">
+            <td>{{login.timestamp}}</td>
+            <td>{{login.email}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</div>
